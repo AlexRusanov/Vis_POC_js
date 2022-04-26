@@ -26,7 +26,13 @@ module.exports = async (env, options) => {
       clean: true,
     },
     resolve: {
-      extensions: [".html", ".js"],
+      extensions: [".ts", ".tsx", ".html", ".js"],
+      fallback: {
+        buffer: require.resolve("buffer/"),
+        http: require.resolve("stream-http"),
+        https: require.resolve("https-browserify"),
+        url: require.resolve("url/"),
+      },
     },
     module: {
       rules: [
@@ -83,6 +89,11 @@ module.exports = async (env, options) => {
         filename: "commands.html",
         template: "./src/commands/commands.html",
         chunks: ["polyfill", "commands"],
+      }),
+      new HtmlWebpackPlugin({
+        filename: "dialog.html",
+        template: "./src/taskpane/dialog.html",
+        chunks: ["polyfill", "dialog"],
       }),
     ],
     devServer: {
