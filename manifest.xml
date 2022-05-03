@@ -108,6 +108,7 @@
         <Id>462f58e1-390a-4d89-8594-64b969f63bf0</Id>
         <Resource>api://localhost:3000/462f58e1-390a-4d89-8594-64b969f63bf0</Resource>
         <Scopes>
+          <Scope>Calendars.Read</Scope>
           <Scope>offline_access</Scope>
           <Scope>openid</Scope>
           <Scope>profile</Scope>

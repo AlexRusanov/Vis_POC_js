@@ -5,7 +5,7 @@ if (!window.Promise) {
 }
 
 const requestObj = {
-  scopes: ["https://graph.microsoft.com/User.Read"],
+  scopes: ["https://graph.microsoft.com/Calendars.Read"],
 };
 Office.initialize = function () {
   if (Office.context.ui.messageParent) {
@@ -21,7 +21,7 @@ Office.initialize = function () {
 
 const msalConfig = {
   auth: {
-    clientId: "462f58e1-390a-4d89-8594-64b969f63bf0", //This is your client ID
+    clientId: "462f58e1-390a-4d89-8594-64b969f63bf0", //This is app client ID
     authority: "https://login.microsoftonline.com/common",
     redirectURI: "https://localhost:3000/dialog.html",
     navigateToLoginRequestUrl: false,
